@@ -1,1 +1,115 @@
 /* Add your CSS here */
+
+/* Set a clean, readable font and remove default margins */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #f4f8fb; /* Light Intel-inspired background */
+  color: #222;
+}
+
+/* --- Hero Section Styles --- */
+header {
+  background: linear-gradient(120deg, #0068b5 60%, #00a6e0 100%);
+  color: #fff;
+  padding: 40px 0 30px 0;
+  text-align: center;
+}
+
+header img {
+  width: 120px; /* Set logo size */
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 2.2em;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.1em;
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* --- Timeline Section Styles --- */
+section {
+  display: flex;
+  flex-direction: row; /* Cards in a row on large screens */
+  overflow-x: auto;    /* Enable horizontal scroll */
+  gap: 24px;           /* Space between cards */
+  padding: 32px 16px;
+  scroll-behavior: smooth;
+}
+
+/* Each milestone card */
+section > div {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,104,181,0.08);
+  min-width: 260px;
+  max-width: 280px;
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  padding: 20px 16px 16px 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Card headings */
+section h2 {
+  color: #0068b5;
+  font-size: 1.3em;
+  margin: 0 0 4px 0;
+}
+
+section h3 {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  color: #222;
+}
+
+/* Card images */
+section img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Card text */
+section p {
+  font-size: 0.98em;
+  margin: 0;
+  color: #444;
+}
+
+/* --- Card Hover Effect: Reveal More Details --- */
+section > div:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,104,181,0.18);
+  background: #e6f2fa; /* Subtle blue highlight */
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 6px;
+  }
+  section > div {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Style the scroll/hint text */
+body > p {
+  text-align: center;
+  color: #0068b5;
+  font-size: 1em;
+  margin: 18px 0 30px 0;
+  letter-spacing: 0.5px;
+}
