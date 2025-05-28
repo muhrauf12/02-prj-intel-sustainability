@@ -1,10 +1,8 @@
-/* Add your CSS here */
-
-/* Set a clean, readable font and remove default margins */
+/* Set a nice, readable font for the whole page */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #f4f8fb; /* Light Intel-inspired background */
+  background-color: #f4f8fb; /* Light blue background */
   color: #222;
 }
 
@@ -16,17 +14,20 @@ header {
   text-align: center;
 }
 
+/* Intel logo styling */
 header img {
   width: 120px; /* Set logo size */
   margin-bottom: 16px;
 }
 
+/* Main heading styling */
 header h1 {
   font-size: 2.2em;
   margin: 0 0 10px 0;
   letter-spacing: 1px;
 }
 
+/* Subheading styling */
 header p {
   font-size: 1.1em;
   max-width: 500px;
@@ -36,22 +37,22 @@ header p {
 
 /* --- Timeline Section Styles --- */
 section {
-  display: flex;
-  flex-direction: row; /* Cards in a row on large screens */
-  overflow-x: auto;    /* Enable horizontal scroll */
-  gap: 24px;           /* Space between cards */
+  display: flex;              /* Arrange cards in a row */
+  flex-direction: row;
+  overflow-x: auto;           /* Allow horizontal scrolling */
+  gap: 24px;                  /* Space between cards */
   padding: 32px 16px;
   scroll-behavior: smooth;
 }
 
-/* Each milestone card */
+/* Each timeline card */
 section > div {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,104,181,0.08);
   min-width: 260px;
   max-width: 280px;
-  flex: 0 0 auto; /* Prevent cards from shrinking */
+  flex: 0 0 auto;             /* Prevent cards from shrinking */
   padding: 20px 16px 16px 16px;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
@@ -73,9 +74,12 @@ section h3 {
 
 /* Card images */
 section img {
-  width: 100%;
+  width: 100%;                /* Make images fill the card width */
+  height: 100px;              /* Set a consistent height */
+  object-fit: cover;          /* Crop images to fit nicely */
   border-radius: 8px;
   margin-bottom: 10px;
+  background: #e6f2fa;        /* fallback background */
 }
 
 /* Card text */
