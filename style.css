@@ -1,131 +1,151 @@
-/* Set a simple font and background for the whole page */
+/* Set a simple font and remove default margin */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #f4f8fb; /* Light blue background */
+  background: #f4f8fb;
   color: #222;
 }
 
-/* Intel logo in the top left corner */
-.intel-logo {
-  position: absolute;   /* Place the logo over the header */
-  top: 20px;
-  left: 20px;
-  width: 90px;          /* Adjust size as needed */
-  z-index: 10;
-}
-
-/* --- Hero Section Styles --- */
-header {
+/* Hero section styles */
+.hero {
   background: linear-gradient(120deg, #0068b5 60%, #00a6e0 100%);
   color: #fff;
-  padding: 60px 0 40px 0; /* More top padding for logo space */
   text-align: center;
+  padding: 48px 10px 40px 10px;
   position: relative;
 }
 
-/* Main heading styling */
-header h1 {
-  font-size: 2.2em;
-  margin: 0 0 10px 0;
-  letter-spacing: 1px;
+/* Intel logo centered at the top */
+.hero-logo {
+  width: 90px;
+  margin-bottom: 18px;
 }
 
-/* Subheading styling */
-header p {
-  font-size: 1.1em;
-  max-width: 500px;
+/* Big bold heading */
+.hero h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+/* Blue underline below heading */
+.hero-underline {
+  width: 60px;
+  border: 2px solid #00baff;
+  margin: 0 auto 18px auto;
+  background: #00baff;
+}
+
+/* Hero subheading */
+.hero p {
+  font-size: 1.15em;
+  max-width: 600px;
   margin: 0 auto;
   opacity: 0.95;
+  line-height: 1.5;
 }
 
-/* --- Timeline Section Styles --- */
-section {
-  display: flex;              /* Arrange cards in a row */
+/* Timeline container */
+.timeline {
+  display: flex;
   flex-direction: row;
-  overflow-x: auto;           /* Allow horizontal scrolling */
-  gap: 24px;                  /* Space between cards */
-  padding: 32px 16px;
-  scroll-behavior: smooth;
+  gap: 24px;
+  justify-content: center;
+  background: #f4f8fb;
+  padding: 40px 0 20px 0;
+  overflow-x: auto;
 }
 
-/* Each timeline card */
-section > div {
+/* Timeline card styles */
+.card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,104,181,0.08);
-  min-width: 260px;
-  max-width: 280px;
-  flex: 0 0 auto;             /* Prevent cards from shrinking */
-  padding: 20px 16px 16px 16px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,104,181,0.10);
+  width: 240px;
+  min-width: 220px;
+  padding: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: box-shadow 0.2s, transform 0.2s;
   position: relative;
-  cursor: pointer;
 }
 
-/* Card headings */
-section h2 {
+/* Card header: year and title */
+.card-header {
+  padding: 18px 16px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-year {
   color: #0068b5;
   font-size: 1.3em;
-  margin: 0 0 4px 0;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
-section h3 {
-  font-size: 1.1em;
-  margin: 0 0 10px 0;
+.card-title {
+  font-size: 1.08em;
+  font-weight: bold;
   color: #222;
 }
 
-/* Card images */
-section img {
-  width: 100%;                /* Make images fill the card width */
-  height: 100px;              /* Set a consistent height */
-  object-fit: cover;          /* Crop images to fit nicely */
-  border-radius: 8px;
-  margin-bottom: 10px;
-  background: #e6f2fa;        /* fallback background */
+/* Card image */
+.card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 0 0 8px 8px;
+  margin-top: 10px;
 }
 
-/* Card text */
-section p {
-  font-size: 0.98em;
-  margin: 0;
-  color: #444;
-}
-
-/* --- Card Hover Effect: Reveal More Details --- */
-section > div:hover {
-  transform: translateY(-8px) scale(1.03);
+/* Card hover effect */
+.card:hover {
   box-shadow: 0 6px 20px rgba(0,104,181,0.18);
-  background: #e6f2fa; /* Subtle blue highlight */
+  transform: translateY(-6px) scale(1.03);
 }
 
-/* Responsive: Stack cards vertically on small screens */
-@media (max-width: 700px) {
-  .intel-logo {
-    width: 70px;
-    top: 10px;
-    left: 10px;
-  }
-  header {
-    padding-top: 80px; /* More space for logo */
-  }
-  section {
-    flex-direction: column;
-    gap: 18px;
-    padding: 18px 6px;
-  }
-  section > div {
-    max-width: 100%;
-    min-width: 0;
-  }
+/* Card with detail overlay (like the blue card in screenshot) */
+.card-detail {
+  background: #2366a8;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,104,181,0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
 }
 
-/* Style the scroll/hint text */
-body > p {
+.card-detail-text {
+  padding: 18px 16px 16px 16px;
+  font-size: 1em;
+  color: #fff;
+  min-height: 110px;
+}
+
+/* Timeline hint text */
+.timeline-hint {
   text-align: center;
   color: #0068b5;
   font-size: 1em;
   margin: 18px 0 30px 0;
   letter-spacing: 0.5px;
+}
+
+/* Responsive: stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+  }
+  .card {
+    width: 95vw;
+    min-width: 0;
+  }
 }
